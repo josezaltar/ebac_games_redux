@@ -24,20 +24,12 @@ function App() {
       .then((res) => setGames(res))
   }, [])
 
-  function adicionarAoCarrinho(jogo: Game) {
-    if (carrinho.find((game) => game.id === jogo.id)) {
-      alert('Item já adicionado')
-    } else {
-      setCarrinho([...carrinho, jogo])
-    }
-  }
-
   return (
     <>
       <GlobalStyle />
       <div className="container">
         <Header itensNoCarrinho={carrinho} />
-        <Produtos jogos={games} adicionarAoCarrinho={adicionarAoCarrinho} />
+        <Produtos jogos={games} adicionarAoCarrinho={ adicionarAoCarrinho } />
       </div>
     </>
   )
